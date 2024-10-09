@@ -51,42 +51,124 @@ h6 {
 
 /* End of Reset */
 
+* {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
 .master-layout {
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
 
 .sidebar {
-    background-color: burlywood;
+    background-color: #d37a3d;
     height: 100vh;
+    position: relative;
+    border: 1px solid transparent;
+    box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.35);
+}
+
+.book-form {
+    margin-top: 60px;
+    width: 100%;
+    padding: 50px;
+    margin: 0 0 40px 0;
+}
+
+.form-row {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+  
+.form-row input[type='text'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+}
+  
+.form-row label {
+    margin-bottom: 15px;
+}
+
+.legacy-form-row {
+    border: none;
+    margin-bottom: 40px;
+}
+  
+.legacy-form-row legend {
+    margin-bottom: 15px;
+}
+  
+.legacy-form-row .radio-label {
+    display: block;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+}
+  
+.legacy-form-row input[type='radio'] {
+    margin-top: 2px;
+}
+    
+.legacy-form-row .radio-label,
+.legacy-form-row input[type='radio'] {
+    float: left;
 }
 
 .container {
-    background-color: #f3f3f3;
+    background-color: #282828;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    
     gap: 50px;
     padding-top: 60px;
+    padding-left: 20px;
     justify-items: center;
 }
 
 .card {
-    background-color: white;
+    background-color: #3f3f3f;
+    color: #fff;
     width: 230px;
     height: 330px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
     gap: 8px;
-    padding-top: 30px;
     border: 1px solid transparent;
-    border-left: 5px solid #fbbf24;
+    border-left: 5px solid #d37a3d;
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
     transition: 0.5s;
 }
 
 .card:hover {
-    background-color: #f1f1f1;
+    transform: translateY(-20px);
     transition: 0.5s;
 }
+
+.title {
+    font-size: 1.3rem;
+    width: 13ch;
+    text-align: center;
+    /* background-color: rgba(212, 212, 212, 0.35); */
+}
+
+.author {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.pageCount,
+.readStatus {
+    margin-top: 10px;
+    font-style: italic;
+}
+

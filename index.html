@@ -12,7 +12,43 @@
 <body>
     <div class="master-layout">
         <div class="sidebar">
-            
+            <form action='' method='get' class='book-form'>
+
+                <div class='form-row'>
+                    <label for='title'>Title</label>
+                    <input id='title' name='title' type='text'/>
+                </div>
+
+                <div class='form-row'>
+                    <label for='author'>Author</label>
+                    <input id='author' name='author' type='text'/>
+                </div>
+
+                <div class='form-row'>
+                    <label for='page-count'>Pages</label>
+                    <input id='page-count' name='page-count' type='text'/>
+                </div>
+
+                <fieldset class='legacy-form-row'>
+                    <legend>Read Status</legend>
+                    <input id='read-status-1'
+                           name='read-status'
+                           type='radio'
+                           value=true />
+                    <label for='read-status-1' class='radio-label'>Read</label>
+                    <input id='read-status-2'
+                           name='read-status'
+                           type='radio'
+                           value=false
+                           checked />
+                    <label for='read-status-2' class='radio-label'>Unread</label>
+                  </fieldset>
+
+                  <div class='form-row'>
+                    <button>Submit</button>
+                  </div>
+                  
+            </form>
         </div>
         <div class="container">
 

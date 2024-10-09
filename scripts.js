@@ -44,7 +44,7 @@ function displayBooks (library) {
 
         title.textContent = book.title;
         author.textContent = book.author;
-        pageCount.textContent = book.pageCount;
+        pageCount.textContent = book.pageCount + " pages";
         book.readStatus === true ? readStatus.textContent = "Read" : readStatus.textContent = "Not yet read";
 
         container.appendChild(card);
