@@ -13,6 +13,9 @@ function Book(title, author, pageCount, readStatus) {
             return `${this.title} by ${this.author}, ${this.pageCount} pages, not yet read.`
         }
     }
+    this.toggleRead = function() {
+        this.readStatus === true ? this.readStatus = false : this.readStatus = true;
+    }
 }
 
 function addBookToLibrary (book) {
@@ -43,6 +46,7 @@ function displayBooks (library) {
         pageCount.className = "pageCount";
         const readStatus = document.createElement("p");
         readStatus.className = "readStatus";
+        readStatus.id = library.indexOf(book);
 
         title.textContent = book.title;
         author.textContent = book.author;
@@ -68,7 +72,15 @@ function displayBooks (library) {
 
         const readButton = buttonContainer.appendChild(document.createElement("button"));
         readButton.className = "read-button";
+        readButton.id = library.indexOf(book);
         readButton.textContent = "Read";
+        readButton.addEventListener("click", (btnClick) => {
+            let index = library.indexOf(book);
+            myLibrary[index].toggleRead;
+            let currentCard = document.querySelector(`[id='${index}']`);
+            let currentReadStatus = currentCard.querySelector(".readStatus");
+            currentReadStatus.textContent === "Read" ? currentReadStatus.textContent = "Not yet read" : readStatus.textContent = "Read";
+        });
 
     });
 }
