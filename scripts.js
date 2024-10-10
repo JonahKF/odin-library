@@ -53,6 +53,15 @@ function displayBooks (library) {
         card.appendChild(author);
         card.appendChild(pageCount);
         card.appendChild(readStatus);
+
+        const buttonContainer = card.appendChild(document.createElement("div"));
+        buttonContainer.className = "button-container";
+        const deleteButton = buttonContainer.appendChild(document.createElement("button"));
+        deleteButton.className = "delete-button";
+        deleteButton.textContent = "Delete";
+        const readButton = buttonContainer.appendChild(document.createElement("button"));
+        readButton.className = "read-button";
+        readButton.textContent = "Read";
     });
 }
 
