@@ -12,21 +12,21 @@
 <body>
     <div class="master-layout">
         <div class="sidebar">
-            <form action='' method='get' class='book-form'>
+            <form action='' method='get' id='book-form'>
 
                 <div class='form-row'>
                     <label for='title'>Title</label>
-                    <input id='title' name='title' type='text'/>
+                    <input id='title' name='title' type='text' required/>
                 </div>
 
                 <div class='form-row'>
                     <label for='author'>Author</label>
-                    <input id='author' name='author' type='text'/>
+                    <input id='author' name='author' type='text' required/>
                 </div>
 
                 <div class='form-row'>
                     <label for='page-count'>Pages</label>
-                    <input id='page-count' name='page-count' type='text'/>
+                    <input id='page-count' name='page-count' type='number' required/>
                 </div>
 
                 <fieldset class='legacy-form-row'>
@@ -34,12 +34,12 @@
                     <input id='read-status-1'
                            name='read-status'
                            type='radio'
-                           value=true />
+                           value='true' />
                     <label for='read-status-1' class='radio-label'>Read</label>
                     <input id='read-status-2'
                            name='read-status'
                            type='radio'
-                           value=false
+                           value='false'
                            checked />
                     <label for='read-status-2' class='radio-label'>Unread</label>
                   </fieldset>

@@ -68,7 +68,7 @@ h6 {
     box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.35);
 }
 
-.book-form {
+#book-form {
     margin-top: 60px;
     width: 100%;
     padding: 50px;
@@ -76,7 +76,7 @@ h6 {
 }
 
 .form-row {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -93,7 +93,7 @@ h6 {
 }
   
 .form-row label {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .legacy-form-row {

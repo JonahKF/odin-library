@@ -28,9 +28,10 @@ addBookToLibrary(theNameOfTheWind);
 addBookToLibrary(bloodOfElves);
 
 function displayBooks (library) {
+    const container = document.querySelector(".container");
+    container.replaceChildren();
 
     library.forEach(book => {
-        const container = document.querySelector(".container");
         const card = document.createElement("div");
         card.className = "card";
         const title = document.createElement("h3");
@@ -53,10 +54,31 @@ function displayBooks (library) {
         card.appendChild(pageCount);
         card.appendChild(readStatus);
     });
-
 }
 
 displayBooks(myLibrary);
 
-// const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-// console.log(theHobbit.info()); "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
+// Form Behavior
+let bookForm = document.getElementById("book-form");
+bookForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    let newTitle = document.getElementById("title");
+    let newAuthor = document.getElementById("author");
+    let newPageCount = document.getElementById("page-count");
+    let newReadStatus = document.getElementById("read-status-1");
+    console.log(newReadStatus.value);
+
+    newReadStatus.checked === true ? newReadStatus = true : newReadStatus = false;
+    console.log(newReadStatus);
+
+    let newBook = new Book(newTitle.value, newAuthor.value, newPageCount.value, newReadStatus);
+
+    addBookToLibrary(newBook);
+    displayBooks(myLibrary);
+
+    newTitle.value = "";
+    newAuthor.value = "";
+    newPageCount.value = "";
+    newReadStatus.value = "";
+});
