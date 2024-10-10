@@ -34,6 +34,7 @@ function displayBooks (library) {
     library.forEach(book => {
         const card = document.createElement("div");
         card.className = "card";
+        card.id = library.indexOf(book);
         const title = document.createElement("h3");
         title.className = "title";
         const author = document.createElement("p");
@@ -58,10 +59,16 @@ function displayBooks (library) {
         buttonContainer.className = "button-container";
         const deleteButton = buttonContainer.appendChild(document.createElement("button"));
         deleteButton.className = "delete-button";
+        deleteButton.id = library.indexOf(book);
         deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", (btnClick) => {
+            document.getElementById(deleteButton.id).remove();
+        });
+
         const readButton = buttonContainer.appendChild(document.createElement("button"));
         readButton.className = "read-button";
         readButton.textContent = "Read";
+
     });
 }
 

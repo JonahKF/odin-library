@@ -159,7 +159,8 @@ h6 {
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.35);
     transition: 0.5s;
 }
 
