@@ -63,6 +63,7 @@ function displayBooks (library) {
         deleteButton.textContent = "Delete";
         deleteButton.addEventListener("click", (btnClick) => {
             document.getElementById(deleteButton.id).remove();
+            myLibrary.splice(library.indexOf(book), 1);
         });
 
         const readButton = buttonContainer.appendChild(document.createElement("button"));
