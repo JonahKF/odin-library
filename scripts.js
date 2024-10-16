@@ -1,11 +1,14 @@
 const myLibrary = [];
 
-function Book(title, author, pageCount, readStatus) {
-    this.title = title;             //string
-    this.author = author;           //string
-    this.pageCount = pageCount;     //int
-    this.readStatus = readStatus;   //boolean
-    this.info = function() {
+class Book {
+    constructor(title, author, pageCount, readStatus) {
+        this.title = title;             //string
+        this.author = author;           //string
+        this.pageCount = pageCount;     //int
+        this.readStatus = readStatus;   //boolean
+    }
+
+    info() {
         if(this.readStatus === true) {
             return `${this.title} by ${this.author}, ${this.pageCount} pages, already read.`
         }
@@ -13,10 +16,31 @@ function Book(title, author, pageCount, readStatus) {
             return `${this.title} by ${this.author}, ${this.pageCount} pages, not yet read.`
         }
     }
-    this.toggleRead = function() {
-        this.readStatus === true ? this.readStatus = false : this.readStatus = true;
+
+    toggleRead() {
+        this.toggleRead = function() {
+            this.readStatus === true ? this.readStatus = false : this.readStatus = true;
+        }
     }
 }
+
+// function Book(title, author, pageCount, readStatus) {
+//     this.title = title;             //string
+//     this.author = author;           //string
+//     this.pageCount = pageCount;     //int
+//     this.readStatus = readStatus;   //boolean
+//     this.info = function() {
+//         if(this.readStatus === true) {
+//             return `${this.title} by ${this.author}, ${this.pageCount} pages, already read.`
+//         }
+//         else if(this.readStatus === false) {
+//             return `${this.title} by ${this.author}, ${this.pageCount} pages, not yet read.`
+//         }
+//     }
+//     this.toggleRead = function() {
+//         this.readStatus === true ? this.readStatus = false : this.readStatus = true;
+//     }
+// }
 
 function addBookToLibrary (book) {
     myLibrary.push(book);
